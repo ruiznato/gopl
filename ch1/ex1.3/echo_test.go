@@ -21,5 +21,7 @@ func BenchmarkConcat(b *testing.B) {
 
 // BenchmarkJoin tests the Join method
 func BenchmarkJoin(b *testing.B) {
-	strings.Join(itemList, " ")
+	for i := 0; i < b.N; i++ {
+		strings.Join(itemList, " ")
+	}
 }
